@@ -1,5 +1,5 @@
 #!/bin/sh
-java \
+sudo java \
 -DTRACE=true \
 -DDEBUG=true \
 -Dinput.target.db.server.hostname=localhost \
