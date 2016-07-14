@@ -1,4 +1,6 @@
 #!/bin/sh
+cd /home/sid
+touch abc
 sudo java \
 -DTRACE=true \
 -DDEBUG=true \
