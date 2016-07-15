@@ -1,6 +1,7 @@
 #!/bin/bash
 cd /home/sid
 echo $1, $2, $3 > param.file
+sudo su - postgres -c "createdb -h localhost -p 1999 -U postgres $1"
 sudo java \
 -DTRACE=true \
 -DDEBUG=true \
