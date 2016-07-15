@@ -13,8 +13,8 @@ sudo java \
 -Dinput.target.db.platform=POSTGRESQL \
 -Dinput.target.install.user=autouser \
 -Dinput.target.install.group=autogroup \
--Dinput.target.tomcat.http.port=$2
--Dinput.target.ajp.port=$3
+-Dinput.target.tomcat.http.port=$2 \
+-Dinput.target.ajp.port=$3 \
 -jar /home/sid/eclipse-installer-1.3.0-SNAPSHOT.jar \
 -console \
 -options-system
