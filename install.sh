@@ -24,7 +24,7 @@ sudo java \
 -options-system
 sudo cp /etc/nginx/sites-available/eclipse_template /etc/nginx/sites-available/$1
 cd /etc/nginx/sites-available
-sudo sed -i /443/$ssl/g $1
+sudo sed -i s/443/$ssl/g $1
 sudo sed -i s/8011/$ajp/g $1
 sudo sed -i s/sidenv1/$1/g $1
 cd /etc/nginx/sites-enabled
