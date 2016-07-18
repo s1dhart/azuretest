@@ -1,5 +1,7 @@
 #!/bin/bash
 cd /home/sid
+$2=ss -tln |   awk 'NR > 1{gsub(/.*:/,"",$4); print $4}' |  sort -un |  awk -v n=8080 '$0 < n {next}; $0 == n {n++; next}; {exit}; END {print n}'
+$3=ss -tln |   awk 'NR > 1{gsub(/.*:/,"",$4); print $4}' |  sort -un |  awk -v n=8009 '$0 < n {next}; $0 == n {n++; next}; {exit}; END {print n}'
 echo $1, $2, $3 > param.file
 sudo su - postgres -c "createdb -h localhost -p 1999 -U postgres $1"
 sudo java \
