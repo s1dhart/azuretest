@@ -22,6 +22,7 @@ sudo java \
 -jar /home/sid/eclipse-installer-1.3.0-SNAPSHOT.jar \
 -console \
 -options-system
+sudo start olm_$1_eclipse
 sudo cp /etc/nginx/sites-available/eclipse_template /etc/nginx/sites-available/$1
 cd /etc/nginx/sites-available
 sudo sed -i s/443/$ssl/g $1
