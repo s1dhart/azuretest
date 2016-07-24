@@ -31,3 +31,4 @@ sudo sed -i s/sidenv1/$1/g $1
 cd /etc/nginx/sites-enabled
 sudo ln -s /etc/nginx/sites-available/$1 $1
 sudo service nginx reload
+echo https://care.westeurope.cloudapp.azure.com:$ssl/eclipse/ | sudo sendmail -f "saurabh.siddhartha@olmgroup.com" me@onenote.com,sid@olmgroup.com
