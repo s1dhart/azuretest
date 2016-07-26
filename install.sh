@@ -35,4 +35,4 @@ sudo service nginx reload
 cd /home/sid
 sudo echo Secure URL for newely Created deployment is : >> email.file
 sudo echo  https://care.westeurope.cloudapp.azure.com:$ssl/eclipse/ >> email.file
-(cat email.file ; uuencode NL_HLD.pdf NL_HLD.pdf )  | mail -s "Deployment details for"$1 sidhart@gmail.com,me@onenote.com,sid@olmgroup.com -a "From:saurabh.siddhartha@olmgroup.com"
+(cat email.file ; uuencode NL_HLD.pdf NL_HLD.pdf )  | mail -s "Deployment details for Customer: "$1 sidhart@gmail.com,me@onenote.com,sid@olmgroup.com -a "From:saurabh.siddhartha@olmgroup.com"
