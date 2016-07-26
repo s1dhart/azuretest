@@ -3,8 +3,8 @@ cd /home/sid
 http=$(ss -tln |   awk 'NR > 1{gsub(/.*:/,"",$4); print $4}' |  sort -un |  awk -v n=8080 '$0 < n {next}; $0 == n {n++; next}; {exit}; END {print n}')
 ajp=$(ss -tln |   awk 'NR > 1{gsub(/.*:/,"",$4); print $4}' |  sort -un |  awk -v n=8009 '$0 < n {next}; $0 == n {n++; next}; {exit}; END {print n}')
 ssl=$(ss -tln |   awk 'NR > 1{gsub(/.*:/,"",$4); print $4}' |  sort -un |  awk -v n=443 '$0 < n {next}; $0 == n {n++; next}; {exit}; END {print n}')
-sudo echo "Following are the connection details of the deployment"
-sudo echo "Customer Name" $1, "HTTP Port Used" $http, "AJP Port Used" $ajp > email.file
+sudo echo "Following are the connection details of the deployment" > email.file
+sudo echo "Customer Name" $1, "HTTP Port Used" $http, "AJP Port Used" $ajp >> email.file
 sudo su - postgres -c "createdb -h localhost -p 1999 -U postgres $1"
 # sudo java \
 -DTRACE=true \
@@ -33,6 +33,6 @@ cd /etc/nginx/sites-enabled
 sudo ln -s /etc/nginx/sites-available/$1 $1
 sudo service nginx reload
 cd /home/sid
-sudo echo Secure URL for newely Created deployment is :
-sudo echo  https://care.westeurope.cloudapp.azure.com:$ssl/eclipse/ > email.file
+sudo echo Secure URL for newely Created deployment is : >> email.file
+sudo echo  https://care.westeurope.cloudapp.azure.com:$ssl/eclipse/ >> email.file
 (cat email.file ; uuencode NL_HLD.pdf NL_HLD.pdf )  | mail -s "Deployment details for"$1 sidhart@gmail.com,me@onenote.com,sid@olmgroup.com -a "From:saurabh.siddhartha@olmgroup.com"
