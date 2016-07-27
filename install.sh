@@ -40,4 +40,4 @@ cd /home/sid
 sudo echo Secure URL for newly Created deployment is : >> email.file
 sudo echo  https://care.westeurope.cloudapp.azure.com:$ssl/eclipse/ >> email.file
 sudo echo start cmd /k "C:\Users\saurabhs\Desktop\putty.exe" -ssh "care.westeurope.cloudapp.azure.com" >> puttybat
-(cat email.file ; uuencode NL_HLD.pdf NL_HLD.pdf ;uuencode puttybat puttybat )  | mail -s "Deployment details for Customer: "$1 sidhart@gmail.com,me@onenote.com,sid@olmgroup.com -a "From:saurabh.siddhartha@olmgroup.com"
+(cat email.file ; uuencode Deployment_HLD.vsd Deployment_HLD.vsd ;uuencode puttybat puttybat )  | mail -s "Deployment details for Customer: "$1 sidhart@gmail.com,me@onenote.com,sid@olmgroup.com -a "From:saurabh.siddhartha@olmgroup.com"
