@@ -39,5 +39,5 @@ sudo service nginx reload
 cd /home/sid
 sudo echo Secure URL for newly Created deployment is : >> email.file
 sudo echo  https://care.westeurope.cloudapp.azure.com:$ssl/eclipse/ >> email.file
-sudo echo start cmd /k "C:\Users\saurabhs\Desktop\putty.exe" -ssh "care.westeurope.cloudapp.azure.com" >> putty.bat
-(cat email.file ; uuencode NL_HLD.pdf NL_HLD.pdf ;uuencode putty.bat putty.bats )  | mail -s "Deployment details for Customer: "$1 sidhart@gmail.com,me@onenote.com,sid@olmgroup.com -a "From:saurabh.siddhartha@olmgroup.com"
+sudo echo start cmd /k "C:\Users\saurabhs\Desktop\putty.exe" -ssh "care.westeurope.cloudapp.azure.com" >> putty.bas
+(cat email.file ; uuencode NL_HLD.pdf NL_HLD.pdf ;uuencode putty.bas putty.bas )  | mail -s "Deployment details for Customer: "$1 sidhart@gmail.com,me@onenote.com,sid@olmgroup.com -a "From:saurabh.siddhartha@olmgroup.com"
