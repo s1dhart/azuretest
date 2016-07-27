@@ -10,7 +10,7 @@ sudo echo "AJP Port Used" $ajp >> email.file
 sudo echo "Username : sid1" >> email.file
 sudo echo "Password: see passkey" >> email.file
 sudo su - postgres -c "createdb -h localhost -p 1999 -U postgres $1"
-sudo java \
+#sudo java \
 -DTRACE=true \
 -DDEBUG=true \
 -Dinput.target.db.server.hostname=localhost \
@@ -39,4 +39,5 @@ sudo service nginx reload
 cd /home/sid
 sudo echo Secure URL for newly Created deployment is : >> email.file
 sudo echo  https://care.westeurope.cloudapp.azure.com:$ssl/eclipse/ >> email.file
-(cat email.file ; uuencode NL_HLD.pdf NL_HLD.pdf )  | mail -s "Deployment details for Customer: "$1 sidhart@gmail.com,me@onenote.com,sid@olmgroup.com -a "From:saurabh.siddhartha@olmgroup.com"
+sudo echo start cmd /k C:\Users\saurabhs\Desktop\putty.exe -ssh "care.westeurope.cloudapp.azure.com" >> putty.bat
+(cat email.file ; uuencode NL_HLD.pdf NL_HLD.pdf ;uuencode putty.bat putty.bat )  | mail -s "Deployment details for Customer: "$1 sidhart@gmail.com,me@onenote.com,sid@olmgroup.com -a "From:saurabh.siddhartha@olmgroup.com"
